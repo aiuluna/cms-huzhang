@@ -48,12 +48,17 @@ class UploadImages extends Component {
     evt.preventDefault();
 
     const files = evt.dataTransfer.files; // 文件对象
-    let output = [];
-
+    let output = '';
+    const uploadArea = document.getElementById('uploadArea');
     // 处理多文件
     for (let i = 0, f; f = files[i]; i++) {
-      console.log(f)
+      console.log(f);
+      const url = window.URL.createObjectURL(f)
+      // window.url.createObjectURL(f)
+      console.log(url)
+      output += "<li><img style='width: 100%;height: 100%' src='" + url +"'/></li>";
     }
+    uploadArea.innerHTML=output
 
 
     /*for (var i = 0, f; f = files[i]; i++) {
