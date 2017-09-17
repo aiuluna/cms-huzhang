@@ -1,0 +1,33 @@
+/*! 版权所有，翻版必究 */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+dd, dl, dt, li, ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #586069; }
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 50px;
+  flex: 0 50px;
+  padding: 10px 20px;
+  border: 1px solid #cccccc; }
+  .nav .title {
+    font-size: 22px;
+    color: #0095ff;
+    margin-right: 80px; }
+  .nav li {
+    margin-left: 20px; }
