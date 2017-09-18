@@ -1,11 +1,57 @@
-#uploadArea {
-  width: 800px;
-  height: 400px;
-  background-color: #cccccc;
-  margin: 0 auto;
+$vm_base: 1280;
+@function vw($px) {
+  @return ($px / $vm_base) * 100vw;
 }
 
-#uploadArea li {
-  width: 200px;
-  height: 150px;
+button {
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: #0095ff;
+  border: none;
+  padding: 0 15px;
+  display: inline-block;
+  line-height: 36px;
+  height: 36px;
+  overflow: hidden;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.uploadImg {
+  height: 100%;
+  //background-color: #cccccc;
+  display: flex;
+  .slider {
+    flex: 0 200px;
+    padding: 20px;
+    button {
+      color: #fff;
+      width: 100%;
+    }
+  }
+  #uploadArea {
+    padding: 20px 0;
+    .imgList {
+      padding: 10px;
+      li {
+        .imgBox {
+          padding: 10px;
+          border: 1px solid rgba(0,0,0,.05);
+        }
+        div.fileInfo {
+          width: 120px;
+          font-size: 10px;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  #uploadImage-tips li:first-child {
+    font-size: 18px;
+    color: #fbbc05
+  }
 }

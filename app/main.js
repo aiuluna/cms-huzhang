@@ -8,7 +8,7 @@ import './main.scss';
 
 ReactDOM.render(
   (<HashRouter>
-    <div id="wrapper">
+    <div className="wrapper">
       <ul className="nav navbar-nav">
         <div className="title">CMS系统</div>
         <li><Link to="/">首页</Link></li>
@@ -16,6 +16,7 @@ ReactDOM.render(
       </ul>
       <Route exact path="/" component={Login}/>
       <Route exact path="/uploadImages" component={UploadImages}/>
+      {/*<Route exact path="/" component={UploadImages}/>*/}
     </div>
   </HashRouter>),
   document.getElementById('app')

@@ -14,10 +14,18 @@ class UploadImages extends Component {
 
   render() {
     return (
-      <div>
-        <div>请拖拽上传</div>
-        <div id="uploadArea"></div>
-        <div>{this.state.innerHTML}</div>
+      <div className="uploadImg">
+        <div className="slider">
+          {/*<button>上传图片</button>*/}
+        </div>
+        <div id="uploadArea">
+          {/*<ul id="uploadImage-tips">
+            <li>你可以将多张图片拖动到下方区域，释放鼠标后自动上传文件。</li>
+          </ul>*/}
+          <ul className="imgList">
+
+          </ul>
+        </div>
       </div>
     )
   }
@@ -36,7 +44,6 @@ class UploadImages extends Component {
   }
 
   dragOver(evt) {
-    // alert(123123)
     evt.stopPropagation();
     evt.preventDefault();
     evt.dataTransfer.dropEffect = 'copy';
@@ -49,16 +56,15 @@ class UploadImages extends Component {
 
     const files = evt.dataTransfer.files; // 文件对象
     let output = '';
-    const uploadArea = document.getElementById('uploadArea');
+    const imgList = $('.imgList');
     // 处理多文件
     for (let i = 0, f; f = files[i]; i++) {
       console.log(f);
       const url = window.URL.createObjectURL(f)
-      // window.url.createObjectURL(f)
       console.log(url)
-      output += "<li><img style='width: 100%;height: 100%' src='" + url +"'/></li>";
+      output += "<li><img class='imgBox' style='width: 100%;height: 100%' src='" + url +"'/></li>";
     }
-    uploadArea.innerHTML=output
+    imgList.append(output)
 
 
     /*for (var i = 0, f; f = files[i]; i++) {
