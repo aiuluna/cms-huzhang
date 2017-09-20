@@ -1,0 +1,38 @@
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .article {
+    //text-indent:2em;
+    padding: 15px;
+    width: 600px;
+    height: 800px;
+    background-color: #cccccc;
+    //overflow: hidden;
+    font-size: 14px;
+    p {
+      line-height: 1.5em;
+      margin: 15px auto;
+    }
+  }
+  .article_left {
+    position: absolute;
+    left: -10000px;
+    padding: 15px;
+    width: 600px;
+    height: 800px;
+    background-color: #cccccc;
+    //overflow: hidden;
+    font-size: 14px;
+    p {
+      line-height: 1.5em;
+      margin: 15px auto;
+    }
+  }
+  .block {
+
+  }
+}
+

@@ -32,12 +32,18 @@ button {
   }
   #uploadArea {
     padding: 20px 0;
+    flex: 1;
     .imgList {
+      display: flex;
       padding: 10px;
+      flex-wrap: wrap;
       li {
+        text-align: center;
         .imgBox {
           padding: 10px;
           border: 1px solid rgba(0,0,0,.05);
+          width: 100px;
+          height: 100px;
         }
         div.fileInfo {
           width: 120px;

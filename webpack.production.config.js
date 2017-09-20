@@ -36,6 +36,11 @@ module.exports = {
             loader: "postcss-loader"
           }]
         })
+      }, {
+        test: /\.(eot|woff|ttf)$/,
+        use: {
+          loader: "file-loader"
+        }
       }
     ]
   },

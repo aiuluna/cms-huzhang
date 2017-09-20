@@ -32,6 +32,11 @@ module.exports = {
         }, {
           loader: "sass-loader"
         }]
+      }, {
+        test: /\.(eot|woff|ttf)$/,
+        use: {
+          loader: "file-loader"
+        }
       }
     ]
   },

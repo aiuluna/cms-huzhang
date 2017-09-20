@@ -2,6 +2,7 @@
  * Created by huzhang on 2017/9/15.
  */
 import React, {Component} from 'react'
+import moment from 'moment'
 import './index.scss'
 
 class UploadImages extends Component {
@@ -20,8 +21,8 @@ class UploadImages extends Component {
         </div>
         <div id="uploadArea">
           {/*<ul id="uploadImage-tips">
-            <li>你可以将多张图片拖动到下方区域，释放鼠标后自动上传文件。</li>
-          </ul>*/}
+           <li>你可以将多张图片拖动到下方区域，释放鼠标后自动上传文件。</li>
+           </ul>*/}
           <ul className="imgList">
 
           </ul>
@@ -60,9 +61,13 @@ class UploadImages extends Component {
     // 处理多文件
     for (let i = 0, f; f = files[i]; i++) {
       console.log(f);
-      const url = window.URL.createObjectURL(f)
-      console.log(url)
-      output += "<li><img class='imgBox' style='width: 100%;height: 100%' src='" + url +"'/></li>";
+
+      const url = window.URL ? window.URL.createObjectURL(f) : window.webkitURL.createObjectURL(f)
+      output += "<li>" +
+        "<img class='imgBox' src='" + url + "'/>" +
+        "<div class='fileInfo'>" + f.name +"</div>" +
+        "<div class='fileInfo'>" + moment().format('YYYY-MM-DD') +"</div>" +
+        "</li>";
     }
     imgList.append(output)
 
